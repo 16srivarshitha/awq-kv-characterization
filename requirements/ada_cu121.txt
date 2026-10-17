@@ -1,0 +1,8 @@
+# Minimal pins for the Ada (RTX 2080 Ti) environment.
+# torch must come from the CUDA 12.1 index:
+#   pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu121
+# Then: pip install -r requirements/ada-cu121.txt
+# TODO: replace the unpinned lines with the output of `pip freeze` from llm_env.
+transformers==4.45.2
+accelerate
+numpy

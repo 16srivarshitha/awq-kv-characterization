@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.log
+slurm-*.out
+bench/results/
+llm_env*/
+.venv/
+hf_cache/
+models/
+*.safetensors
+*.bin
+*.pt
+*.tgz
+.env
