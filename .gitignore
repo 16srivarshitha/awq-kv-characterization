@@ -2,7 +2,6 @@ __pycache__/
 *.pyc
 *.log
 slurm-*.out
-bench/results/
 llm_env*/
 .venv/
 hf_cache/
@@ -11,4 +10,5 @@ models/
 *.bin
 *.pt
 *.tgz
-.env
+.env__pycache__/
+*.pyc
