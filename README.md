@@ -117,7 +117,7 @@ The layer is flat (memory-bound) up to b=64 and compute-bound from b≈128, cons
 
 - **`copy`** includes cache concatenation, `repeat_kv` expansion, RoPE, RMSNorm, and SiLU elementwise kernels. It is not just the cache copy.
 - **gemm vs attn is unreliable.** Some attention work lands in `gemm`. For MHA, `attn` reads about 0.1 ms in every row, which is impossible (at b=1, ctx 4096 the KV read alone is at least 2.3 ms), so MHA attention is counted in another bucket. Do not read the MHA gemm/attn/copy split. The `gpu_busy` totals are valid.
-- **head_dim 100** in open_llama_3b_v2 may disadvantage it in fast attention kernels, so the MHA-vs-GQA gap is not a clean attention-type comparison. `bench/kernels.py` shows which kernels actually run.
+- **head_dim 100** in open_llama_3b_v2 may disadvantage it in fast attention kernels, so the MHA-vs-GQA gap is not a clean attention-type comparison. `bench/kernel_names.py` shows which kernels actually run.
 - **HF `DynamicCache`** copies the full cache each step, which inflates context scaling. Do not read a KV crossover from these numbers.
 - **Memory estimator** (`--plan_only`) marked every GQA OOM cell correctly but is about 1 GB low for MHA.
 - One node per run; cells are medians of 3 repeats.
@@ -129,6 +129,6 @@ The layer is flat (memory-bound) up to b=64 and compute-bound from b≈128, cons
 | FP16 baseline on 2080 Ti, GQA and MHA | Done |
 | Calibration | Done |
 | AWQ baseline | Not run. AutoAWQ not installed; checkpoint download returned 401 |
-| Kernel-name check (`kernels.py`) | Not run |
+| Kernel-name check (`kernel_names.py`) | Not run |
 | Roofline model, crossover maps, Nsight | Not started |
 | Other kernels (TinyChat, vLLM) | Not tried on Ada |
