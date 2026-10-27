@@ -12,3 +12,5 @@ models/
 *.tgz
 .env__pycache__/
 *.pyc
+bench/nsys/*.nsys-rep
+bench/nsys/*.sqlite

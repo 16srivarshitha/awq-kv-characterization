@@ -1,0 +1,36 @@
+Generating SQLite file nsys/fp16_c128_b4.sqlite from nsys/fp16_c128_b4.nsys-rep
+Processing [nsys/fp16_c128_b4.sqlite] with [/opt/nvidia/nsight-systems/2025.1.3/host-linux-x64/reports/cuda_gpu_kern_sum.py]... 
+Time (%),Total Time (ns),Instances,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+85.0,368754755,3617,101950.4,87423.0,36415,1328364,129464.6,void cutlass::Kernel2<cutlass_75_wmma_tensorop_f16_s161616gemm_f16_16x16_128x2_tn_align8>(T1::Params)
+7.8,33871888,924,36657.9,35039.0,32191,92095,9765.8,kernel_unified_attention
+1.7,7583984,28,270856.6,270268.0,262685,293212,6784.7,turing_fp16_s1688gemm_fp16_256x64_sliced1x2_ldg8_f2f_tn
+1.4,5916296,56,105648.1,107390.0,97663,110878,3772.8,turing_fp16_s1688gemm_fp16_128x64_sliced1x2_ldg8_f2f_tn
+0.7,3122673,896,3485.1,3488.0,3327,3776,89.6,reduce_segments
+0.6,2787380,924,3016.6,3008.0,2752,10400,376.3,triton_red_fused_fused_add_rms_norm_2
+0.6,2467197,924,2670.1,2656.0,2432,4160,189.4,triton_red_fused_fused_add_rms_norm_0
+0.5,2010273,891,2256.2,2272.0,2047,2816,134.1,triton_poi_fused_3
+0.5,2008771,28,71741.8,71615.0,66559,79326,3059.8,turing_fp16_s1688gemm_fp16_64x64_sliced1x4_ldg8_f2f_tn
+0.4,1765314,924,1910.5,1952.0,1728,2144,128.5,reshape_and_cache_kernel_flash
+0.4,1759590,924,1904.3,1824.0,1728,4416,391.1,triton_poi_fused_mul_silu_slice_1
+0.1,220188,33,6672.4,6496.0,6176,12288,1020.4,_gumbel_sample_kernel
+0.0,192061,33,5820.0,5824.0,5728,5952,54.6,"void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)], std::array<char *, (unsigned long)2>, (int)4, TrivialOffsetCalculator<(int)1, unsigned int>, TrivialOffsetCalculator<(int)1, unsigned int>, at::native::memory::LoadWithCast<(int)1>, at::native::memory::StoreWithCast<(int)1>>(int, T1, T2, T4, T5, T6, T7)"
+0.0,176094,33,5336.2,5344.0,5120,5504,60.9,"void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<float, at::native::ArgMaxOps<float>, unsigned int, long, (int)4, (int)4>>(T3)"
+0.0,144287,33,4372.3,4320.0,4256,4928,159.2,_bias_kernel
+0.0,115547,33,3501.4,3456.0,3360,4351,164.4,triton_red_fused__to_copy_embedding_rms_norm_0
+0.0,109407,33,3315.4,3296.0,3232,3424,45.9,"void at::native::index_elementwise_kernel<(int)128, (int)4, void at::native::gpu_index_kernel<void at::native::index_kernel_impl<at::native::OpaqueType<(int)8>>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>)::[lambda(char *, const char *, long) (instance 1)]>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>, const T1 &, bool)::[lambda(int) (instance 1)]>(long, T3)"
+0.0,107774,33,3265.9,3264.0,2656,3744,272.7,_post_update_kernel
+0.0,107040,33,3243.6,3232.0,3168,3360,40.6,_gather_block_tables_kernel
+0.0,97791,33,2963.4,2944.0,2592,3360,121.8,_combine_sampled_and_draft_tokens_kernel
+0.0,95646,33,2898.4,2880.0,2783,3232,116.8,_get_num_sampled_and_rejected_kernel
+0.0,86174,33,2611.3,2592.0,2560,2688,31.0,_compute_slot_mappings_kernel
+0.0,78271,33,2371.8,2336.0,2303,2592,90.8,"void at::native::index_elementwise_kernel<(int)128, (int)4, void at::native::gpu_index_kernel<void at::native::index_kernel_impl<at::native::OpaqueType<(int)4>>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>)::[lambda(char *, const char *, long) (instance 1)]>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>, const T1 &, bool)::[lambda(int) (instance 1)]>(long, T3)"
+0.0,78014,33,2364.1,2367.0,2304,2784,81.9,triton_poi_fused_1
+0.0,61823,66,936.7,928.0,896,992,27.2,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::FillFunctor<int>, std::array<char *, (unsigned long)1>>(int, T2, T3)"
+0.0,61088,33,1851.2,1856.0,1792,1952,36.8,"void at::native::vectorized_gather_kernel<(int)16, long>(char *, char *, T2 *, int, long, long, long, long, bool)"
+0.0,52512,33,1591.3,1568.0,1504,1696,61.1,"void at::native::_scatter_gather_elementwise_kernel<(int)128, (int)8, void at::native::_cuda_scatter_gather_internal_kernel<(bool)0, at::native::OpaqueType<(int)8>, long>::operator ()<at::native::TensorAssign>(at::TensorIterator &, long, long, long, const T1 &)::[lambda(int) (instance 1)]>(int, T3)"
+0.0,42944,33,1301.3,1280.0,1248,1440,47.1,_prepare_pos_seq_lens_kernel
+0.0,32800,33,993.9,992.0,960,1024,21.1,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::FillFunctor<bool>, std::array<char *, (unsigned long)1>>(int, T2, T3)"
+0.0,30304,33,918.3,928.0,896,928,14.9,"void <unnamed>::elementwise_kernel_with_index<int, at::native::arange_cuda_out(const c10::Scalar &, const c10::Scalar &, const c10::Scalar &, at::Tensor &)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 3)]::operator ()() const::[lambda(long) (instance 1)]>(T1, T2, function_traits<T2>::result_type *)"
+0.0,22815,7,3259.3,3136.0,3072,3967,318.3,_apply_write_kernel
+0.0,3296,1,3296.0,3296.0,3296,3296,0.0,_prepare_prefill_inputs_kernel
+
