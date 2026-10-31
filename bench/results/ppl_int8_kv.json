@@ -1,0 +1,34 @@
+[
+ {
+  "ctx": 2048,
+  "bits": 16,
+  "ppl": 10.873754497967612,
+  "windows": 64,
+  "group": 128,
+  "fakeq_calls": 1792
+ },
+ {
+  "ctx": 2048,
+  "bits": 8,
+  "ppl": 10.875417430271131,
+  "windows": 64,
+  "group": 128,
+  "fakeq_calls": 1792
+ },
+ {
+  "ctx": 4096,
+  "bits": 16,
+  "ppl": 10.104626895016956,
+  "windows": 64,
+  "group": 128,
+  "fakeq_calls": 1792
+ },
+ {
+  "ctx": 4096,
+  "bits": 8,
+  "ppl": 10.106231471739,
+  "windows": 64,
+  "group": 128,
+  "fakeq_calls": 1792
+ }
+]
