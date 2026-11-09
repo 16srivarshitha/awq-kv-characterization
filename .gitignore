@@ -16,3 +16,4 @@ bench/nsys/*.nsys-rep
 bench/nsys/*.sqlite
 bench/results_vllm_test/
 bench/plots_test/
+elf.o
