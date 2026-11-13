@@ -1,0 +1,23 @@
+step,mode,block_k,num_warps,num_stages,num_splits,regs,spill_stores,spill_loads,cta_per_sm,occ_pct,max_err,graph_us,eff_bw_gbs
+Step0 Padded TC,padded,32,4,2,32,202,0,0,2,25.0,1.55e+00,491.6,68.3
+Step1 FP16 SIMT,fp16,16,1,1,32,168,0,0,12,37.5,6.87e-05,67.68,495.8
+Step1 FP16 SIMT,fp16,32,1,1,32,214,0,0,9,28.1,6.87e-05,69.05,485.9
+Step1 FP16 SIMT,fp16,32,1,2,32,214,0,0,9,28.1,6.87e-05,68.69,488.5
+Step1 FP16 SIMT,fp16,32,2,1,32,254,0,0,4,25.0,6.87e-05,84.85,395.5
+Step1 FP16 SIMT,fp16,64,2,1,32,255,12,8,4,25.0,6.87e-05,80.98,414.4
+Step1 FP16 SIMT,fp16,32,4,2,32,168,0,0,3,37.5,6.87e-05,207.24,161.9
+Step2 INT8 Unpacked,int8_fp32,32,2,1,32,255,0,0,4,25.0,9.77e-04,129.45,129.6
+Step2 INT8 Unpacked,int8_fp32,32,4,2,32,240,0,0,2,25.0,9.77e-04,230.01,72.9
+Step3 INT8 Pack32 Unfus,unfused,32,2,1,32,240,0,0,4,25.0,9.77e-04,95.27,176.1
+Step4 INT8 Pack32 Fused,fused_sk,16,1,1,32,237,0,0,8,25.0,9.77e-04,75.12,223.3
+Step4 INT8 Pack32 Fused,fused_sk,32,1,1,32,255,0,0,8,25.0,9.77e-04,98.42,170.5
+Step4 INT8 Pack32 Fused,fused_sk,16,2,1,32,168,0,0,6,37.5,9.77e-04,146.6,114.4
+Step4 INT8 Pack32 Fused,fused_sk,32,2,1,32,241,0,0,4,25.0,9.77e-04,85.78,195.6
+Step4 INT8 Pack32 Fused,fused_sk,32,2,2,32,241,0,0,4,25.0,9.77e-04,85.88,195.4
+Step4 INT8 Pack32 Fused,fused_sk,64,2,1,32,255,0,0,4,25.0,9.77e-04,73.39,228.6
+Step4 INT8 Pack32 Fused,fused_sk,32,4,1,32,168,0,0,3,37.5,9.77e-04,172.01,97.5
+Step4 INT8 Pack32 Fused,fused_sk,16,1,1,64,237,0,0,8,25.0,9.61e-04,62.96,266.5
+Step4 INT8 Pack32 Fused,fused_sk,32,2,1,16,241,0,0,4,25.0,9.61e-04,115.85,144.8
+Step4 INT8 Pack32 Fused,fused_sk,32,2,1,64,241,0,0,4,25.0,9.61e-04,91.89,182.6
+Step4 INT8 KernOnly,fused_sk,16,1,1,32,237,0,0,8,25.0,9.77e-04,70.76,237.1
+Step4 INT8 KernOnly,fused_sk,32,2,1,32,241,0,0,4,25.0,9.77e-04,81.1,206.9
