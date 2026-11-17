@@ -1,0 +1,7 @@
+mode,description,ctx,windows,ppl,delta_vs_fp16
+fp16,fp16 baseline (eval 1 anchor),2048,64,10.8738,+0.0000
+no_had_static,"no-hadamard static (k,v)",2048,64,10.8818,+0.0080
+no_had_kchan_vtok,no-hadamard static k + tok v,2048,64,10.8744,+0.0007
+had_kv8_a16_static,"rand-hadamard static (k,v)",2048,64,10.8936,+0.0199
+had_kv8_a16_vtok,rand-hadamard stat k + tok v (triton),2048,64,10.8857,+0.0120
+had_kv8_q8_vtok,rand-hadamard q8+k_stat+v_tok (dp4a),2048,64,10.8832,+0.0094
