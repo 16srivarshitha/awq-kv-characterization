@@ -53,7 +53,7 @@ All raw rows are saved in `results/csv/eval2_ablation_matrix.csv`. Key milestone
 | Step 4: INT8 Pack32 KernelOnly | 16 | 1 | 32 | 237 | 0 B | 8 | 25.0% | `9.77e-4` | 70.76 | 237.1 GB/s |
 | Step 4: INT8 Pack32 Fused `s_k` | 16 | 1 | 64 | 237 | 0 B | 8 | 25.0% | `9.61e-4` | **62.96** | **266.5 GB/s** |
 
-![Stage 2 Evolution](results/plots/stage2_evolution_waterfall.png)
+![Stage 2 Evolution](../results/plots/stage2_evolution_waterfall.png)
 
 ## 4. Full 2D Batch & Context Sweep (`results/csv/eval2_full_2d_grid.csv`)
 
@@ -61,7 +61,7 @@ Swept all 42 cells across `B in {1, 2, 4, 8, 16, 32}` and `S in {128, 256, 512, 
 - **Peak speedup:** `8.12x` at `(B=16, S=2048)` (`1,933.8 µs -> 238.1 µs` FP16) and `8.11x` at `(B=8, S=4096)`.
 - **Batch crossover:** At `B=1, S=8192`, `SIMT FP16 (w=1)` reaches `69.4 µs` (`7.09x`) vs `INT8 Fused (w=1)` at `75.4 µs` (`6.52x`, including `q @ H`). At `B=32, S=8192` (1.07 GB FP16 KV footprint), DRAM saturation lets `INT8 Fused` (`1,587.8 µs`, `6.92x`) beat `SIMT FP16` (`1,855.5 µs`, `5.92x`) by `267.7 µs` (`14.4%` faster than FP16).
 
-![Stage 2 2D Scaling](results/plots/stage2_2d_scaling.png)
+![Stage 2 2D Scaling](../results/plots/stage2_2d_scaling.png)
 
 ## 5. Pending Verification & Caveats
 - All Stage 2 kernel latencies (`eval2_ablation_matrix.csv`, `eval2_full_2d_grid.csv`) are standalone microbenchmarks on synthetic Gaussian tensors (`torch.randn`), not yet integrated into vLLM's end-to-end `TRITON_ATTN` execution path.
