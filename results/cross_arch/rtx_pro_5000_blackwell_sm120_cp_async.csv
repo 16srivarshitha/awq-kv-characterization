@@ -1,0 +1,7 @@
+gpu,sm_arch,mode,splits,num_stages,regs,ldgsts_ops,bar_ops,graph_us
+NVIDIA RTX PRO 5000 Blackwell,sm_120,fp16,64,1,165,0,0,18.44
+NVIDIA RTX PRO 5000 Blackwell,sm_120,fp16,64,2,165,0,0,18.44
+NVIDIA RTX PRO 5000 Blackwell,sm_120,fp16,64,3,165,0,0,18.44
+NVIDIA RTX PRO 5000 Blackwell,sm_120,int8,64,1,196,0,23,28.66
+NVIDIA RTX PRO 5000 Blackwell,sm_120,int8,64,2,196,0,23,28.67
+NVIDIA RTX PRO 5000 Blackwell,sm_120,int8,64,3,196,0,23,28.67
